@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <header>BOMBER MAN</header>
+    <div class="game-score">SCORE =
+        <div id="gameScore">0</div>
+    </div>
+    <div id="flagScore" class="flag-score">FLAGS = 0</div>
+    <div id="gridContainer" class="grid-container">
+
+    </div>
+    <div id="resultDisplay" class="result-display"></div>
+    <button id="resetButton">RESET</button>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let container = document.querySelector(".grid-container")
+            let scoreGame = document.querySelector("#gameScore")
+            let resetGame = document.querySelector("#resetButton")
+            let totalScore = 0
+
+            // creating div box
+            for (let i = 0; i < 81; i++) {
+                const newDiv = document.createElement("div")
+                newDiv.classList.add("block")
+                container.appendChild(newDiv)
+            }
+            //    creating randomly  showing picture array
+            let pictures = []
+
+            for (let i = 0; i < 10; i++) {
+                pictures.push(Math.floor(Math.random() * 81))
+            }
+
+            console.log(pictures)
+            //  handle on click 
+            let allDivs = document.querySelectorAll('.block')
+            let clicked = false
+            for (let i = 0; i < allDivs.length; i++) {
+                allDivs[i].onclick = () => {
+
+                    //  checking which div's has background image
+                    if (allDivs[i].classList.contains('bg')) {
+                        clicked = true;
+                        if (clicked) {
+
+                            for (let j = 0; j < allDivs.length; j++) {
+                                if (allDivs[j].hasAttribute("id")) {
+                                    allDivs[j].removeAttribute("id")
+                                }
+                            }
+                        }
+                    } else {
+                        //  setting div color green and score counting 
+
+                        if (allDivs[i].classList.contains("green")) {
+                            return false
+                        } else {
+                            allDivs[i].classList.add("green")
+                            scoreGame.innerHTML = ++totalScore
+                            console.log(totalScore)
+                        }
+                    }
+                }
+
+                // Adding backgroundColor images randomly
+                pictures.forEach((picture) => {
+                    if (picture === i) {
+                        allDivs[i].classList.add("bg");
+                        allDivs[i].setAttribute("id", "blockDisplay")
+                    }
+                })
+            }
+        })
+        // allDivs[j].classList.contains("bg")
+    </script>
+</body>
+
+</html>

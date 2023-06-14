@@ -1,0 +1,112 @@
+* {
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: "Bangers", cursive;
+	letter-spacing: 2px;
+}
+
+:root {
+	height: 100vh;
+	width: 100vw;
+	background: no-repeat;
+	background-size: 100% 100%;
+	background-image: url(https://img.freepik.com/free-photo/blue-dark-gradient-texture-wall-background_28629-888.jpg?size=626&ext=jpg);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-size: 100% 100%;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 12vh;
+	width: 100%;
+	color: #8bd77b;
+	font-size: 60px;
+	text-decoration: underline overline;
+	letter-spacing: 4px;
+}
+
+.game-score {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	width: 100%;
+	font-size: 30px;
+	color: #b63f3f;
+}
+
+.flag-score {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	width: 100%;
+	font-size: 30px;
+	color: #e3a740;
+}
+
+.grid-container {
+	height: 75vh;
+	width: 55%;
+	margin-bottom: 0;
+	cursor: pointer;
+	display: grid;
+	grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.result-display {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+button {
+	font-size: 20px;
+	color: red;
+	cursor: pointer;
+	margin: 0 auto;
+	background: black;
+}
+
+.block {
+    /* height: 30px;
+    width: 30px;  */
+    background-color: white;
+    margin: 5px;
+}
+
+
+#resetButton{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+
+.green {
+	background-color: green;
+}
+
+.bg {
+	background-image: url("./images/bom.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: red;
+
+} 
+
+#blockDisplay {
+    background: white;
+}
